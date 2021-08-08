@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: ./frontend 
+      dockerfile: Dockerfile.prod
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/src

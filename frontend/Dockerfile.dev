@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0.100-preview.6 AS build
+WORKDIR /src
+
+COPY frontend.csproj .
+RUN dotnet restore
+
+# copy and publish app and libraries
+COPY . .
+ENTRYPOINT [ "dotnet", "watch","run", "-r", "linux-x64", "--launch-profile", "frontend"]
+
+# CMD tail -f /dev/null

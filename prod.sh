@@ -1,0 +1,1 @@
+docker compose -f "docker-compose.prod.yml" $1 $2 $3
